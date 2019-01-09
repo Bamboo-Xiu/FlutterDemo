@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'NewRoute.dart';
 
 void main() => runApp(new MyApp());
 
@@ -49,6 +50,17 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.display1,
             ),
+            FlatButton(
+              child: Text("open new route"),
+              textColor: Colors.blue,
+              onPressed: () {
+                //导航到新路由
+                Navigator.push(context,
+                    new MaterialPageRoute(builder: (context) {
+                      return NewRoute();
+                    }));
+              },
+            )
           ],
         ),
       ),
