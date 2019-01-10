@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'NewRoute.dart';
+import 'package:english_words/english_words.dart';
 
 void main() => runApp(new MyApp());
 
@@ -12,6 +13,10 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: new MyHomePage(title: 'Flutter Demo Home Page'),
+      //注册路由表
+      routes:{
+        "new_page":(context)=>NewRoute(),
+      }
     );
   }
 }
@@ -54,11 +59,12 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text("open new route"),
               textColor: Colors.blue,
               onPressed: () {
+                Navigator.pushNamed(context,"new_page");
                 //导航到新路由
-                Navigator.push(context,
-                    new MaterialPageRoute(builder: (context) {
-                      return NewRoute();
-                    }));
+//                Navigator.push(context,
+//                    new MaterialPageRoute(builder: (context) {
+//                      return NewRoute();
+//                    }));
               },
             )
           ],
@@ -70,5 +76,18 @@ class _MyHomePageState extends State<MyHomePage> {
         child: new Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
+  }
+}
+
+class RandomWordsWidget extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    // 生成随机字符串
+    final wordPair = WordPair.random();
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: new Text(wordPair.toString()),
+    );
+
   }
 }
