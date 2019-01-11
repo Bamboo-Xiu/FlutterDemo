@@ -66,7 +66,8 @@ class _MyHomePageState extends State<MyHomePage> {
 //                      return NewRoute();
 //                    }));
               },
-            )
+            ),
+            new RandomWordsWidget(),
           ],
         ),
       ),
@@ -88,6 +89,5 @@ class RandomWordsWidget extends StatelessWidget{
       padding: const EdgeInsets.all(8.0),
       child: new Text(wordPair.toString()),
     );
-
   }
 }
