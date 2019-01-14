@@ -91,3 +91,20 @@ class RandomWordsWidget extends StatelessWidget{
     );
   }
 }
+
+
+class Echo extends StatelessWidget{
+  final String text;
+  final Color backgroundColor;
+
+  const Echo({
+    Key key,
+    @required this.text,
+    this.backgroundColor:Colors.amberAccent
+  }):super(key:key);
+
+  @override
+  Widget build(BuildContext context) {
+
+  }
+}
