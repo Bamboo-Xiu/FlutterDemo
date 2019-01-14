@@ -68,6 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
             new RandomWordsWidget(),
+            new Echo(text:"hiahiahiahia~")
           ],
         ),
       ),
@@ -105,6 +106,11 @@ class Echo extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-
+    return Center(
+      child:Container(
+        color:backgroundColor,
+        child: Text(text),
+      )
+    );
   }
 }
