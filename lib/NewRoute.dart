@@ -63,7 +63,7 @@ class _TapboxAState extends State<TapboxA>{
 // ParentWidget 为 TapboxB 管理状态
 //------------------------ ParentWidget --------------------------------
 class ParentWidget extends StatefulWidget{
-  _ParentWidgetState createState() => new
+  _ParentWidgetState createState() => new _ParentWidgetState();
 }
 
 class _ParentWidgetState extends State<ParentWidget>{
@@ -77,10 +77,10 @@ class _ParentWidgetState extends State<ParentWidget>{
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return new Container(
       child: new TapboxB(
-
+        active: _active,
+        onChanged: _handleTapboxChanged,
       ),
     );
   }
@@ -105,7 +105,7 @@ class TapboxB extends StatelessWidget{
         child: new Center(
           child: new Text(
             active ? 'Active' : 'Inactive',
-            style: new TextStyle(fontSize: 32.0, color: Colors.white),
+            style: new TextStyle(fontSize: 25.0, color: Colors.white),
           ),
         ),
         width: 100.0,
@@ -115,5 +115,29 @@ class TapboxB extends StatelessWidget{
         ),
       ),
     );
+  }
+}
+
+
+/**
+ * 混合管理
+ */
+//------------------------ ParentWidget --------------------------------
+class ParentWidgetC extends StatefulWidget{
+
+}
+
+class _ParentWidgetCState extends State<ParentWidgetC>{
+  bool _active = false;
+
+  void _handleTapboxChanged(bool newValue){
+    setState(() {
+      _active = newValue;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+
   }
 }

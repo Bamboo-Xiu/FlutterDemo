@@ -69,7 +69,8 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             new RandomWordsWidget(),
 //            new Echo(text:"hiahiahiahia~")
-          new TapboxA(),
+            new TapboxA(),
+            new ParentWidget(),
           ],
         ),
       ),
