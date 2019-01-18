@@ -8,7 +8,20 @@ class NewRoute extends StatelessWidget{
         title:Text("New route"),
       ),
       body:Center(
-        child:Text("This is new route"),
+        child:new Column(
+          children: <Widget>[
+            new Text("Hello world" * 6,
+              textAlign: TextAlign.center    //居中
+              ),
+            new Text("Hello world! I'm Jack." * 4,
+              maxLines: 1,    //限定为一行展示
+              overflow: TextOverflow.ellipsis,    //overflow来指定截断方式，展示不下就用省略号...
+            ),
+            new Text("Hello world",
+              textScaleFactor: 1.5,    //代表文本相对于当前字体大小的缩放因子
+            )
+          ],
+        ),
       )
     );
   }
@@ -42,11 +55,11 @@ class _TapboxAState extends State<TapboxA>{
         child: new Center(
           child: new Text(
             _active ? 'Active': 'Inactive',
-            style: new TextStyle(fontSize: 32.0,color: Colors.white),
+            style: new TextStyle(fontSize: 25.0,color: Colors.white),
           )
         ),
-        width: 200.0,
-        height: 200.0,
+        width: 100.0,
+        height: 100.0,
         decoration: new BoxDecoration(
           color: _active ? Colors.lightGreen[700] : Colors.grey[600],
         ),

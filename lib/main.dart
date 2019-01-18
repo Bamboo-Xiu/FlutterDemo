@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'NewRoute.dart';
 import 'package:english_words/english_words.dart';
+import 'CupertinoTestRoute.dart';
 
 void main() => runApp(new MyApp());
 
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
       //注册路由表
       routes:{
         "new_page":(context)=>NewRoute(),
+        "cupertino_page":(context)=>CupertinoTestRoute(),
       }
     );
   }
@@ -59,12 +61,20 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text("open new route"),
               textColor: Colors.blue,
               onPressed: () {
+                //导航到新路由-方法一
                 Navigator.pushNamed(context,"new_page");
-                //导航到新路由
-//                Navigator.push(context,
-//                    new MaterialPageRoute(builder: (context) {
-//                      return NewRoute();
-//                    }));
+              },
+            ),
+            FlatButton(
+              child: Text("open cupertino page"),
+              textColor: Colors.amber,
+              onPressed: (){
+                //导航到新路由-方法二
+                Navigator.push(context,
+                  new MaterialPageRoute(builder:(context){
+                    return CupertinoTestRoute();
+                  })
+                );
               },
             ),
             new RandomWordsWidget(),
