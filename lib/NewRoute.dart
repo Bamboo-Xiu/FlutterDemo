@@ -19,6 +19,50 @@ class NewRoute extends StatelessWidget{
             ),
             new Text("Hello world",
               textScaleFactor: 1.5,    //代表文本相对于当前字体大小的缩放因子
+            ),
+            new Text("Hello world",
+              style: TextStyle(
+                color: Colors.blue,
+                fontSize: 18.0,
+                height: 1.2,    //用于指定行高，并不是一个绝对值，而是一个因子，具体的行高等于 fontSize * height
+                fontFamily: "Courier",    //字体
+                background: new Paint()..color=Colors.yellow,
+                decoration: TextDecoration.underline,
+                decorationStyle: TextDecorationStyle.dashed
+              ),
+            ),
+            Text.rich(TextSpan(    //Text其实就是RichText的一个包装，而RichText是可以显示多种样式(富文本)的widget。
+              children: [
+                TextSpan(
+                  text: "Home:"
+                ),
+                TextSpan(
+                  text: "https://flutterchina.club",
+                  style: TextStyle(
+                    color: Colors.blue
+                  ),
+//                  recognizer: _tapRecongnizer
+                )
+              ]
+            )),
+            DefaultTextStyle(    //1、设置文案默认样式
+              style: TextStyle(
+                color:Colors.red,
+                fontSize: 20.0,
+              ),
+              textAlign: TextAlign.start,    //左对齐
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text("Hello world"),
+                  Text("I am Jack"),
+                  Text("I am Jack",
+                    style: TextStyle(
+                      inherit: false,    //2、不继承默认样式
+                      color: Colors.grey
+                    ),)
+                ],
+              ),
             )
           ],
         ),
