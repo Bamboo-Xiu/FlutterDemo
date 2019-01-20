@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'NewRoute.dart';
 import 'package:english_words/english_words.dart';
 import 'CupertinoTestRoute.dart';
+import 'buttonWidget.dart';
 
 void main() => runApp(new MyApp());
 
@@ -48,7 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: new Center(
         child: new Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+//          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             new Text(
               'You have pushed the button this many times:',
@@ -81,7 +82,17 @@ class _MyHomePageState extends State<MyHomePage> {
 //            new Echo(text:"hiahiahiahia~")
             new TapboxA(),
 //            new ParentWidget(),
-            new ParentWidgetC()
+            new ParentWidgetC(),
+            FlatButton(
+              child: Text("open button widget page"),
+              textColor: Colors.red,
+              onPressed: (){
+                Navigator.push(context,
+                  new MaterialPageRoute(builder: (context){
+                    return buttonWidget();
+                  }));
+              },
+            )
           ],
         ),
       ),

@@ -103,7 +103,7 @@ class _TapboxAState extends State<TapboxA>{
           )
         ),
         width: 100.0,
-        height: 100.0,
+        height: 50.0,
         decoration: new BoxDecoration(
           color: _active ? Colors.lightGreen[700] : Colors.grey[600],
         ),
@@ -166,7 +166,7 @@ class TapboxB extends StatelessWidget{
           ),
         ),
         width: 100.0,
-        height: 100.0,
+        height: 200.0,
         decoration: new BoxDecoration(
           color: active ? Colors.lightGreen[700] : Colors.grey[600]
         ),
