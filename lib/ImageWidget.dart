@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+//Iamge and Icon and Switch and Checkbox 控件
 class ImageWidget extends StatelessWidget{
 
   String icons = "";
@@ -47,7 +48,7 @@ class ImageWidget extends StatelessWidget{
                 Icon(MyIcons.wechat,color: Colors.green,),
               ],
             ),
-
+            new SwitchAndCheckBoxTeshRoute(),
           ],
         ),
       ),
@@ -69,4 +70,36 @@ class MyIcons{
       fontFamily:'myIcon',
       matchTextDirection: true
   );
+}
+
+//Switch and Checkbox控件
+class SwitchAndCheckBoxTeshRoute extends StatefulWidget{
+  _SwitchAndCheckBoxTestRouteState createState() => new _SwitchAndCheckBoxTestRouteState();
+}
+class _SwitchAndCheckBoxTestRouteState extends State<SwitchAndCheckBoxTeshRoute>{
+  bool _switchSelected = true;
+  bool _checkboxSelected = true;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        Switch(
+          value: _switchSelected,
+          onChanged: (value){
+            setState(() {
+              _switchSelected = value;
+            });
+          },
+        ),
+        Checkbox(
+          value: _checkboxSelected,
+          activeColor: Colors.red,
+          onChanged: (value){
+            _checkboxSelected = value;
+          },
+        )
+      ],
+    );
+  }
 }
