@@ -4,6 +4,7 @@ import 'package:english_words/english_words.dart';
 import 'CupertinoTestRoute.dart';
 import 'buttonWidget.dart';
 import 'ImageWidget.dart';
+import 'InputTestRoute.dart';
 
 void main() => runApp(new MyApp());
 
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
         "new_page":(context)=>NewRoute(),
         "cupertino_page":(context)=>CupertinoTestRoute(),
         "image_widget":(context)=>ImageWidget(),
+        "input_test_route": (context)=>InputTestRoute(),
       }
     );
   }
@@ -86,6 +88,14 @@ class _MyHomePageState extends State<MyHomePage> {
               colorBrightness: Brightness.dark,
               onPressed: (){
                 Navigator.pushNamed(context, "image_widget");
+              },
+            ),
+            RaisedButton(
+              child: Text("open input widget"),
+              color: Colors.blue,
+              colorBrightness: Brightness.dark,
+              onPressed: (){
+                Navigator.pushNamed(context, "input_test_route");
               },
             ),
             new RandomWordsWidget(),
