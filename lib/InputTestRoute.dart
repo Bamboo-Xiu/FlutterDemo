@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'FormTestRoute.dart';
 
 class InputTestRoute extends StatefulWidget {
   @override
@@ -73,6 +74,17 @@ class _InputTestRouteState extends State<InputTestRoute> {
                         // 当所有编辑框都失去焦点时键盘就会收起
                         focusNode1.unfocus();
                         focusNode2.unfocus();
+                      },
+                    ),
+                    RaisedButton(
+                      child: Text("打开表单实现的实例"),
+                      color: Colors.blue,
+                      colorBrightness: Brightness.dark,
+                      onPressed: (){
+                        Navigator.push(context,
+                          new MaterialPageRoute(builder: (context){
+                            return FormTestRoute();
+                          }));
                       },
                     ),
                   ],
