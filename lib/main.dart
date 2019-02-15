@@ -23,6 +23,7 @@ class MyApp extends StatelessWidget {
         "cupertino_page":(context)=>CupertinoTestRoute(),
         "image_widget":(context)=>ImageWidget(),
         "input_test_route": (context)=>InputTestRoute(),
+        "row_column_route": (context)=>RowColumnTestRoute(),
       }
     );
   }
@@ -112,7 +113,14 @@ class _MyHomePageState extends State<MyHomePage> {
                     return buttonWidget();
                   }));
               },
-            )
+            ),
+            RaisedButton(
+              child: Text("open Row and Column widget"),
+              color: Colors.cyan,
+              onPressed: (){
+                Navigator.pushNamed(context, "row_column_route");
+              },
+            ),
           ],
         ),
       ),
