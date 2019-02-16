@@ -5,6 +5,7 @@ import 'CupertinoTestRoute.dart';
 import 'buttonWidget.dart';
 import 'ImageWidget.dart';
 import 'InputTestRoute.dart';
+import 'RowColumnTestRoute.dart';
 
 void main() => runApp(new MyApp());
 
@@ -117,6 +118,7 @@ class _MyHomePageState extends State<MyHomePage> {
             RaisedButton(
               child: Text("open Row and Column widget"),
               color: Colors.cyan,
+              colorBrightness: Brightness.dark,
               onPressed: (){
                 Navigator.pushNamed(context, "row_column_route");
               },
