@@ -7,6 +7,7 @@ import 'ImageWidget.dart';
 import 'InputTestRoute.dart';
 import 'RowColumnTestRoute.dart';
 import 'FlexLayoutTestRoute.dart';
+import 'StackPositionedRoute.dart';
 
 void main() => runApp(new MyApp());
 
@@ -124,19 +125,32 @@ class _MyHomePageState extends State<MyHomePage> {
 //                Navigator.pushNamed(context, "row_column_route");
 //              },
 //            ),
+//            RaisedButton(
+//              child: Text("open FlexLayout"),
+//              color: Colors.green,
+//              colorBrightness: Brightness.dark,
+//              onPressed: (){
+//                Navigator.push(
+//                  context,
+//                  new MaterialPageRoute(builder: (context){
+//                    return FlexLayoutTestRoute();
+//                  })
+//                );
+//              },
+//            ),
             RaisedButton(
-              child: Text("open FlexLayout"),
+              child: Text("open Stack Positioned"),
               color: Colors.green,
               colorBrightness: Brightness.dark,
               onPressed: (){
                 Navigator.push(
-                  context,
-                  new MaterialPageRoute(builder: (context){
-                    return FlexLayoutTestRoute();
-                  })
+                    context,
+                    new MaterialPageRoute(builder: (context){
+                      return StackPositionedRoute();
+                    })
                 );
               },
-            )
+            ),
           ],
         ),
       ),
