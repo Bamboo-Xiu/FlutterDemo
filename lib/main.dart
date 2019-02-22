@@ -109,7 +109,7 @@ class _MyHomePageState extends State<MyHomePage> {
 //            new ParentWidget(),
             new ParentWidgetC(),
             FlatButton(
-              child: Text("open button widget page"),
+              child: Text("open button and Container widget page"),
               textColor: Colors.red,
               onPressed: (){
                 Navigator.push(context,
@@ -153,7 +153,7 @@ class _MyHomePageState extends State<MyHomePage> {
 //              },
 //            ),
             RaisedButton(
-              child: Text("open Padding Route"),
+              child: Text("open Padding Transform DecoratedBox Route"),
               color: Colors.green,
               colorBrightness: Brightness.dark,
               onPressed: (){

@@ -5,7 +5,7 @@ class buttonWidget extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Button Widget show"),
+        title: Text("Button Widget and Container show"),
       ),
       body: Center(
         child: new Column(
@@ -34,7 +34,8 @@ class buttonWidget extends StatelessWidget{
               child: Text("Submit"),
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),    //外形
               onPressed: () => {},    //按钮点击回调
-            )
+            ),
+
           ],
         ),
       ),

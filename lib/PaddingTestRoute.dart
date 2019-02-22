@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math' as math;
 
 class PaddingTestRoute extends StatelessWidget {
   @override
@@ -46,6 +47,16 @@ class PaddingTestRoute extends StatelessWidget {
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 80.0,vertical: 20.0),
                 child: Text("Login",style: TextStyle(color: Colors.white),),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: 50.0),
+              child: DecoratedBox(
+                decoration: BoxDecoration(color: Colors.red),
+                child: Transform.rotate(
+                  angle: math.pi / 2,
+                  child: Text("Hello world"),
+                ),
               ),
             )
           ],
