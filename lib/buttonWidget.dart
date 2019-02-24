@@ -35,7 +35,31 @@ class buttonWidget extends StatelessWidget{
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),    //外形
               onPressed: () => {},    //按钮点击回调
             ),
-
+            Text("以下为Container内容：",style: TextStyle(fontSize: 20.0),),
+            Container(
+              margin: EdgeInsets.only(top: 50.0,left: 120.0),    //容器外补白
+              constraints: BoxConstraints.tightFor(width: 200.0,height: 150.0),   //卡片大小
+              decoration: BoxDecoration(    //背景装饰
+                borderRadius: BorderRadius.circular(4.0),
+                gradient: RadialGradient(    //背景径向渐变
+                  colors: [Colors.red,Colors.orange],
+                  center: Alignment.topLeft,
+                  radius: 0.98
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black54,
+                    offset: Offset(4.0, 2.0),    //阴影的大小
+                    blurRadius: 6.0    //阴影模糊处理的半径大小
+                  )
+                ]
+              ),
+              transform: Matrix4.rotationZ(.2),    //卡片倾斜变换
+              alignment: Alignment.center,
+              child: Text(
+                "5.20",style: TextStyle(color: Colors.white,fontSize: 40.0),
+              ),
+            )
           ],
         ),
       ),
