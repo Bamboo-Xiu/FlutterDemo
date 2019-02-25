@@ -57,131 +57,138 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: new AppBar(
         title: new Text(widget.title),
       ),
-      body: new Center(
-        child: new Column(
+      body: Scrollbar(    //默认滚动条
+        child: SingleChildScrollView(    //可滚动的布局
+          reverse: true,
+          padding: EdgeInsets.all(10.0),
+          child: new Center(
+            child: new Column(
 //          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            new Text(
-              'You have pushed the button this many times:',
-            ),
-            new Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
-            ),
-            FlatButton(
-              child: Text("open new route"),
-              textColor: Colors.blue,
-              onPressed: () {
-                //导航到新路由-方法一
-                Navigator.pushNamed(context,"new_page");
+              children: <Widget>[
+                new Text(
+                  'You have pushed the button this many times:',
+                ),
+                new Text(
+                  '$_counter',
+                  style: Theme.of(context).textTheme.display1,
+                ),
+                FlatButton(
+                  child: Text("open new route"),
+                  textColor: Colors.blue,
+                  onPressed: () {
+                    //导航到新路由-方法一
+                    Navigator.pushNamed(context,"new_page");
+                  },
+                ),
+                FlatButton(
+                  child: Text("open cupertino page"),
+                  textColor: Colors.amber,
+                  onPressed: (){
+                    //导航到新路由-方法二
+                    Navigator.push(context,
+                        new MaterialPageRoute(builder:(context){
+                          return CupertinoTestRoute();
+                        })
+                    );
+                  },
+                ),
+                RaisedButton(
+                  child: Text("open image widget"),
+                  color: Colors.blue,
+                  colorBrightness: Brightness.dark,
+                  onPressed: (){
+                    Navigator.pushNamed(context, "image_widget");
+                  },
+                ),
+                RaisedButton(
+                  child: Text("open input widget"),
+                  color: Colors.blue,
+                  colorBrightness: Brightness.dark,
+                  onPressed: (){
+                    Navigator.pushNamed(context, "input_test_route");
+                  },
+                ),
+                new RandomWordsWidget(),
+//            new Echo(text:"hiahiahiahia~")
+                new TapboxA(),
+//            new ParentWidget(),
+                new ParentWidgetC(),
+                FlatButton(
+                  child: Text("open button and Container widget page"),
+                  textColor: Colors.red,
+                  onPressed: (){
+                    Navigator.push(context,
+                        new MaterialPageRoute(builder: (context){
+                          return buttonWidget();
+                        }));
+                  },
+                ),
+            RaisedButton(
+              child: Text("open Row and Column widget"),
+              color: Colors.cyan,
+              colorBrightness: Brightness.dark,
+              onPressed: (){
+                Navigator.pushNamed(context, "row_column_route");
               },
             ),
-            FlatButton(
-              child: Text("open cupertino page"),
-              textColor: Colors.amber,
+            RaisedButton(
+              child: Text("open FlexLayout"),
+              color: Colors.green,
+              colorBrightness: Brightness.dark,
               onPressed: (){
-                //导航到新路由-方法二
-                Navigator.push(context,
-                  new MaterialPageRoute(builder:(context){
-                    return CupertinoTestRoute();
+                Navigator.push(
+                  context,
+                  new MaterialPageRoute(builder: (context){
+                    return FlexLayoutTestRoute();
                   })
                 );
               },
             ),
             RaisedButton(
-              child: Text("open image widget"),
-              color: Colors.blue,
-              colorBrightness: Brightness.dark,
-              onPressed: (){
-                Navigator.pushNamed(context, "image_widget");
-              },
-            ),
-            RaisedButton(
-              child: Text("open input widget"),
-              color: Colors.blue,
-              colorBrightness: Brightness.dark,
-              onPressed: (){
-                Navigator.pushNamed(context, "input_test_route");
-              },
-            ),
-            new RandomWordsWidget(),
-//            new Echo(text:"hiahiahiahia~")
-            new TapboxA(),
-//            new ParentWidget(),
-            new ParentWidgetC(),
-            FlatButton(
-              child: Text("open button and Container widget page"),
-              textColor: Colors.red,
-              onPressed: (){
-                Navigator.push(context,
-                  new MaterialPageRoute(builder: (context){
-                    return buttonWidget();
-                  }));
-              },
-            ),
-//            RaisedButton(
-//              child: Text("open Row and Column widget"),
-//              color: Colors.cyan,
-//              colorBrightness: Brightness.dark,
-//              onPressed: (){
-//                Navigator.pushNamed(context, "row_column_route");
-//              },
-//            ),
-//            RaisedButton(
-//              child: Text("open FlexLayout"),
-//              color: Colors.green,
-//              colorBrightness: Brightness.dark,
-//              onPressed: (){
-//                Navigator.push(
-//                  context,
-//                  new MaterialPageRoute(builder: (context){
-//                    return FlexLayoutTestRoute();
-//                  })
-//                );
-//              },
-//            ),
-//            RaisedButton(
-//              child: Text("open Stack Positioned"),
-//              color: Colors.green,
-//              colorBrightness: Brightness.dark,
-//              onPressed: (){
-//                Navigator.push(
-//                    context,
-//                    new MaterialPageRoute(builder: (context){
-//                      return StackPositionedRoute();
-//                    })
-//                );
-//              },
-//            ),
-//            RaisedButton(
-//              child: Text("open Padding Transform DecoratedBox Route"),
-//              color: Colors.green,
-//              colorBrightness: Brightness.dark,
-//              onPressed: (){
-//                Navigator.push(
-//                    context,
-//                    new MaterialPageRoute(builder: (context){
-//                      return PaddingTestRoute();
-//                    })
-//                );
-//              },
-//            ),
-            RaisedButton(
-              child: Text("open Scaffold Route"),
+              child: Text("open Stack Positioned"),
               color: Colors.green,
               colorBrightness: Brightness.dark,
               onPressed: (){
                 Navigator.push(
                     context,
                     new MaterialPageRoute(builder: (context){
-                      return ScaffoldRoute();
+                      return StackPositionedRoute();
                     })
                 );
               },
             ),
-          ],
-        ),
+            RaisedButton(
+              child: Text("open Padding Transform DecoratedBox Route"),
+              color: Colors.green,
+              colorBrightness: Brightness.dark,
+              onPressed: (){
+                Navigator.push(
+                    context,
+                    new MaterialPageRoute(builder: (context){
+                      return PaddingTestRoute();
+                    })
+                );
+              },
+            ),
+                RaisedButton(
+                  child: Text("open Scaffold Route"),
+                  color: Colors.green,
+                  colorBrightness: Brightness.dark,
+                  onPressed: (){
+                    Navigator.push(
+                        context,
+                        new MaterialPageRoute(builder: (context){
+                          return ScaffoldRoute();
+                        })
+                    );
+                  },
+                ),
+              ],
+            ),
+          ),
+        )
       ),
+      
       floatingActionButton: new FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
