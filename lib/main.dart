@@ -13,6 +13,7 @@ import 'ScaffoldRoute.dart';
 import 'ListViewRoute.dart';
 import 'InfiniteListViewRoute.dart';
 import 'GridViewRoute.dart';
+import 'InfiniteGridViewRoute.dart';
 
 void main() => runApp(new MyApp());
 
@@ -221,6 +222,19 @@ class _MyHomePageState extends State<MyHomePage> {
                         context,
                         new MaterialPageRoute(builder: (context){
                           return GridViewRoute();
+                        })
+                    );
+                  },
+                ),
+                RaisedButton(
+                  child: Text("open InfiniteGrideViewRoute"),
+                  color: Colors.cyan,
+                  colorBrightness: Brightness.dark,
+                  onPressed: (){
+                    Navigator.push(
+                        context,
+                        new MaterialPageRoute(builder: (context){
+                          return InfiniteGridView();
                         })
                     );
                   },
