@@ -15,6 +15,7 @@ import 'InfiniteListViewRoute.dart';
 import 'GridViewRoute.dart';
 import 'InfiniteGridViewRoute.dart';
 import 'CustomScrollViewTestRoute.dart';
+import 'ScrollControllerTestRoute.dart';
 
 void main() => runApp(new MyApp());
 
@@ -249,6 +250,19 @@ class _MyHomePageState extends State<MyHomePage> {
                         context,
                         new MaterialPageRoute(builder: (context){
                           return CustomScrollViewTestRoute();
+                        })
+                    );
+                  },
+                ),
+                RaisedButton(
+                  child: Text("open ScrollControllerTestRoute"),
+                  color: Colors.cyan,
+                  colorBrightness: Brightness.dark,
+                  onPressed: (){
+                    Navigator.push(
+                        context,
+                        new MaterialPageRoute(builder: (context){
+                          return ScrollControllerTestRoute();
                         })
                     );
                   },
