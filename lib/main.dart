@@ -16,6 +16,7 @@ import 'GridViewRoute.dart';
 import 'InfiniteGridViewRoute.dart';
 import 'CustomScrollViewTestRoute.dart';
 import 'ScrollControllerTestRoute.dart';
+import 'ScrollNotificationTestRoute.dart';
 
 void main() => runApp(new MyApp());
 
@@ -263,6 +264,19 @@ class _MyHomePageState extends State<MyHomePage> {
                         context,
                         new MaterialPageRoute(builder: (context){
                           return ScrollControllerTestRoute();
+                        })
+                    );
+                  },
+                ),
+                RaisedButton(
+                  child: Text("open ScrollNotificationTestRoute"),
+                  color: Colors.cyan,
+                  colorBrightness: Brightness.dark,
+                  onPressed: (){
+                    Navigator.push(
+                        context,
+                        new MaterialPageRoute(builder: (context){
+                          return ScrollNotificationTestRoute();
                         })
                     );
                   },

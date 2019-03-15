@@ -41,6 +41,7 @@ class ScrollControllerTestRouteState extends State<ScrollControllerTestRoute>{
           child:ListView.builder(
             itemCount: 100,
             itemExtent: 50.0,   //列表项高度固定时，显式指定高度是一个好习惯（性能消耗小）
+            controller: _controller,
             itemBuilder:(context,index){
             return ListTile(title: Text("$index"),);
             }
