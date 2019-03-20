@@ -17,6 +17,7 @@ import 'InfiniteGridViewRoute.dart';
 import 'CustomScrollViewTestRoute.dart';
 import 'ScrollControllerTestRoute.dart';
 import 'ScrollNotificationTestRoute.dart';
+import 'WillPopScopeTestRoute.dart';
 
 void main() => runApp(new MyApp());
 
@@ -277,6 +278,19 @@ class _MyHomePageState extends State<MyHomePage> {
                         context,
                         new MaterialPageRoute(builder: (context){
                           return ScrollNotificationTestRoute();
+                        })
+                    );
+                  },
+                ),
+                RaisedButton(
+                  child: Text("open WillPopScopeTestRoute"),
+                  color: Colors.cyan,
+                  colorBrightness: Brightness.dark,
+                  onPressed: (){
+                    Navigator.push(
+                        context,
+                        new MaterialPageRoute(builder: (context){
+                          return WillPopScopeTestRoute();
                         })
                     );
                   },
