@@ -26,22 +26,29 @@ class _ScrollNotificationTestRouteState
                 _progress = "${(progress * 100).toInt()}%";
               });
               print("BottomEdge: ${notification.metrics.extentAfter == 0}");
-              //return true; //放开此行注释后，进度条将失效
+              if(notification is ScrollStartNotification){    // 滚动开始
+                print("Scroll start...");
+              }else if(notification is ScrollUpdateNotification){    // 滚动位置更新
+                print("Scroll update...");
+              }else if(notification is ScrollEndNotification){    // 滚动结束
+                print("Scroll end...");
+              }
+              return true; //放开此行注释后，进度条将失效（然而我没有发现失效。。。）
             },
             child: Stack(
               alignment: Alignment.center,
               children: <Widget>[
+                CircleAvatar(  //显示进度百分比
+                  radius: 30.0,
+                  child: Text(_progress),
+                  backgroundColor: Colors.black54,
+                ),
                 ListView.builder(
                     itemCount: 100,
                     itemExtent: 50.0,
                     itemBuilder: (context, index) {
                       return ListTile(title: Text("$index"));
                     }
-                ),
-                CircleAvatar(  //显示进度百分比
-                  radius: 30.0,
-                  child: Text(_progress),
-                  backgroundColor: Colors.black54,
                 )
               ],
             ),
