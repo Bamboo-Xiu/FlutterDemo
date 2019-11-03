@@ -25,6 +25,7 @@ class ScrollControllerTestRouteState extends State<ScrollControllerTestRoute>{
         });
       }
     });
+    super.initState();
   }
 
   void dispose(){

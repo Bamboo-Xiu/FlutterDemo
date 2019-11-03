@@ -23,7 +23,11 @@ class ListViewRoute extends StatelessWidget{
         child: ListView.separated(    // ListView.separated 用法
             //列表构造器
             itemBuilder: (BuildContext context, int index){
-              return ListTile(title: Text("$index"),);
+              return ListTile(
+                leading:Icon(Icons.map),
+                title: Text("$index"),
+                subtitle: Text('load # $index'),
+              );
             },
             //分割器构造器
             separatorBuilder: (BuildContext context,int index){

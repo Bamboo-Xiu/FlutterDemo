@@ -18,6 +18,7 @@ import 'CustomScrollViewTestRoute.dart';
 import 'ScrollControllerTestRoute.dart';
 import 'ScrollNotificationTestRoute.dart';
 import 'WillPopScopeTestRoute.dart';
+import 'CustomScrollViewTestRoute2.dart';
 
 void main() => runApp(new MyApp());
 
@@ -252,6 +253,19 @@ class _MyHomePageState extends State<MyHomePage> {
                         context,
                         new MaterialPageRoute(builder: (context){
                           return CustomScrollViewTestRoute();
+                        })
+                    );
+                  },
+                ),
+                RaisedButton(
+                  child: Text("open CustomScrollViewTestRoute2"),
+                  color: Colors.cyan,
+                  colorBrightness: Brightness.dark,
+                  onPressed: (){
+                    Navigator.push(
+                        context,
+                        new MaterialPageRoute(builder: (context){
+                          return CustomScrollViewTestRoute2();
                         })
                     );
                   },
