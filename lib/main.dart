@@ -19,6 +19,7 @@ import 'ScrollControllerTestRoute.dart';
 import 'ScrollNotificationTestRoute.dart';
 import 'WillPopScopeTestRoute.dart';
 import 'CustomScrollViewTestRoute2.dart';
+import 'updateItem/UpdateItemMain.dart';
 
 void main() => runApp(new MyApp());
 
@@ -305,6 +306,19 @@ class _MyHomePageState extends State<MyHomePage> {
                         context,
                         new MaterialPageRoute(builder: (context){
                           return WillPopScopeTestRoute();
+                        })
+                    );
+                  },
+                ),
+                RaisedButton(
+                  child: Text("open UpdateItemDemo"),
+                  color: Colors.cyan,
+                  colorBrightness: Brightness.dark,
+                  onPressed: (){
+                    Navigator.push(
+                        context,
+                        new MaterialPageRoute(builder: (context){
+                          return UpdateItemMain();
                         })
                     );
                   },
