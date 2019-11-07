@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app1/CustomPainterDemo.dart';
 import 'NewRoute.dart';
 import 'package:english_words/english_words.dart';
 import 'CupertinoTestRoute.dart';
@@ -319,6 +320,19 @@ class _MyHomePageState extends State<MyHomePage> {
                         context,
                         new MaterialPageRoute(builder: (context){
                           return UpdateItemMain();
+                        })
+                    );
+                  },
+                ),
+                RaisedButton(
+                  child: Text("open CustomPainterDemo"),
+                  color: Colors.cyan,
+                  colorBrightness: Brightness.dark,
+                  onPressed: (){
+                    Navigator.push(
+                        context,
+                        new MaterialPageRoute(builder: (context){
+                          return CustomPainterDemo();
                         })
                     );
                   },
