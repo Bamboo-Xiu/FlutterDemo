@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app1/ChangeThemeDemo.dart';
 import 'package:flutter_app1/CustomPainterDemo.dart';
+import 'package:flutter/foundation.dart';
+
 import 'NewRoute.dart';
 import 'package:english_words/english_words.dart';
 import 'CupertinoTestRoute.dart';
@@ -22,16 +25,36 @@ import 'WillPopScopeTestRoute.dart';
 import 'CustomScrollViewTestRoute2.dart';
 import 'updateItem/UpdateItemMain.dart';
 
-void main() => runApp(new MyApp());
+void main() {
+
+  runApp(new MyApp());
+}
 
 class MyApp extends StatelessWidget {
+
+  // iOS 浅色主题
+  final ThemeData kIOSTheme = ThemeData(
+      brightness: Brightness.light,    // 亮色主题
+      accentColor: Colors.white,    // (按钮)Widget 前景色为白色
+      primaryColor: Colors.blue,    // 主题色为蓝色
+      iconTheme: IconThemeData(color: Colors.grey),    // icon 主题为灰色
+      textTheme: TextTheme(body1: TextStyle(color: Colors.black))    // 文本主题为黑色
+  );
+
+  // Android 深色主题
+  final ThemeData kAndroidTheme = ThemeData(
+      brightness: Brightness.dark,    // 深色主题
+      accentColor: Colors.black,    // (按钮)Widget 前景色为黑色
+      primaryColor: Colors.cyan,    // 主题色为青色
+      iconTheme: IconThemeData(color: Colors.blue),    // icon 主题色为蓝色
+      textTheme: TextTheme(body1: TextStyle(color: Colors.red))    // 文本主题色为红色
+  );
+
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
       title: 'Flutter Demo',
-      theme: new ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: defaultTargetPlatform == TargetPlatform.iOS ? kIOSTheme : kAndroidTheme,
       home: new MyHomePage(title: 'Flutter Demo Home Page'),
       //注册路由表
       routes:{
@@ -82,6 +105,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 new Text(
                   '$_counter',
                   style: Theme.of(context).textTheme.display1,
+                ),
+                Container(
+                  color: Theme.of(context).primaryColor,    // 容器背景色复用应用主题色
+                  child: Text(
+                    'Text with a background color',
+                    style: Theme.of(context).textTheme.title, // Text 组件文本样式复用应用文本样式
+                  ),
                 ),
                 FlatButton(
                   child: Text("open new route"),
@@ -333,6 +363,19 @@ class _MyHomePageState extends State<MyHomePage> {
                         context,
                         new MaterialPageRoute(builder: (context){
                           return CustomPainterDemo();
+                        })
+                    );
+                  },
+                ),
+                RaisedButton(
+                  child: Text("open ChangeThemeDemo"),
+                  color: Colors.cyan,
+                  colorBrightness: Brightness.dark,
+                  onPressed: (){
+                    Navigator.push(
+                        context,
+                        new MaterialPageRoute(builder: (context){
+                          return ChangeThemeDemo();
                         })
                     );
                   },
