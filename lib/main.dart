@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app1/ChangeThemeDemo.dart';
 import 'package:flutter_app1/CustomPainterDemo.dart';
 import 'package:flutter/foundation.dart';
+import 'package:date_format/date_format.dart';
+import 'package:flutter_app1/questionList/QuestionListRoot.dart';
 
 import 'NewRoute.dart';
 import 'package:english_words/english_words.dart';
@@ -93,12 +95,13 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Scrollbar(    //默认滚动条
         child: SingleChildScrollView(    //可滚动的布局
-          reverse: true,
+          reverse: false,
           padding: EdgeInsets.all(10.0),
           child: new Center(
             child: new Column(
 //          mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
+                Text('现在时刻是：' + formatDate(DateTime.now(),[yyyy,'年',mm,'月',dd,'日',hh,':',n])),
                 new Text(
                   'You have pushed the button this many times:',
                 ),
@@ -380,6 +383,22 @@ class _MyHomePageState extends State<MyHomePage> {
                     );
                   },
                 ),
+                Container(
+                  width: double.infinity,    // 宽度充满父布局
+                  child: RaisedButton(
+                    child: Text("open QuestionList"),
+                    color: Colors.cyan,
+                    colorBrightness: Brightness.dark,
+                    onPressed: (){
+                      Navigator.push(
+                          context,
+                          new MaterialPageRoute(builder: (context){
+                            return QuestionListRoot();
+                          })
+                      );
+                    },
+                  ),
+                )
               ],
             ),
           ),

@@ -26,6 +26,15 @@ dependencies:
   cupertino_icons: ^0.1.2
   #新添加的依赖
   english_words: ^3.1.5
+  date_format: 1.0.6
+
+  # 可以根据路径依赖：
+  # package1:
+  #   path: ../package1/    # 路径依赖
+  # 可以 Git 依赖：
+  # date_format:
+  #   git:
+  #     url: https://github.com/xxx/package2.git    # git 依赖
 
 #dev_dependencies：开发环境依赖的工具包（而不是flutter应用本身依赖的包）
 dev_dependencies:
