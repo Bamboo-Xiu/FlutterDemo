@@ -3,6 +3,8 @@ import 'package:flutter_app1/ChangeThemeDemo.dart';
 import 'package:flutter_app1/CustomPainterDemo.dart';
 import 'package:flutter/foundation.dart';
 import 'package:date_format/date_format.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter_app1/GestureDemo.dart';
 import 'package:flutter_app1/questionList/QuestionListRoot.dart';
 
 import 'NewRoute.dart';
@@ -28,7 +30,8 @@ import 'CustomScrollViewTestRoute2.dart';
 import 'updateItem/UpdateItemMain.dart';
 
 void main() {
-
+  /// 视觉调试开关
+  debugPaintSizeEnabled = false;
   runApp(new MyApp());
 }
 
@@ -36,20 +39,20 @@ class MyApp extends StatelessWidget {
 
   // iOS 浅色主题
   final ThemeData kIOSTheme = ThemeData(
-      brightness: Brightness.light,    // 亮色主题
-      accentColor: Colors.white,    // (按钮)Widget 前景色为白色
-      primaryColor: Colors.blue,    // 主题色为蓝色
-      iconTheme: IconThemeData(color: Colors.grey),    // icon 主题为灰色
-      textTheme: TextTheme(body1: TextStyle(color: Colors.black))    // 文本主题为黑色
-  );
-
-  // Android 深色主题
-  final ThemeData kAndroidTheme = ThemeData(
       brightness: Brightness.dark,    // 深色主题
       accentColor: Colors.black,    // (按钮)Widget 前景色为黑色
       primaryColor: Colors.cyan,    // 主题色为青色
       iconTheme: IconThemeData(color: Colors.blue),    // icon 主题色为蓝色
       textTheme: TextTheme(body1: TextStyle(color: Colors.red))    // 文本主题色为红色
+  );
+
+  // Android 深色主题
+  final ThemeData kAndroidTheme = ThemeData(
+      brightness: Brightness.light,    // 亮色主题
+      accentColor: Colors.white,    // (按钮)Widget 前景色为白色
+      primaryColor: Colors.blue,    // 主题色为蓝色
+      iconTheme: IconThemeData(color: Colors.grey),    // icon 主题为灰色
+      textTheme: TextTheme(body1: TextStyle(color: Colors.black))    // 文本主题为黑色
   );
 
   @override
@@ -395,6 +398,22 @@ class _MyHomePageState extends State<MyHomePage> {
                           new MaterialPageRoute(builder: (context){
                             return QuestionListRoot();
                           })
+                      );
+                    },
+                  ),
+                ),
+                Container(
+                  width: double.infinity,
+                  child: RaisedButton(
+                    color: Colors.cyan,
+                    child: Text('open GestureDemo'),
+                    colorBrightness: Brightness.dark,
+                    onPressed: (){
+                      Navigator.push(
+                        context,
+                        new MaterialPageRoute(builder: (context){
+                          return GestureDemo();
+                        })
                       );
                     },
                   ),
