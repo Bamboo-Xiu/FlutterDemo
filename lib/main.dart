@@ -5,6 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'package:date_format/date_format.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_app1/GestureDemo.dart';
+import 'package:flutter_app1/dataTransfer/DataTransferDemo.dart';
 import 'package:flutter_app1/questionList/QuestionListRoot.dart';
 
 import 'NewRoute.dart';
@@ -414,6 +415,22 @@ class _MyHomePageState extends State<MyHomePage> {
                         new MaterialPageRoute(builder: (context){
                           return GestureDemo();
                         })
+                      );
+                    },
+                  ),
+                ),
+                Container(
+                  width: double.infinity,
+                  child: RaisedButton(
+                    color: Colors.cyan,
+                    child: Text('open DataTransferDemo'),
+                    colorBrightness: Brightness.dark,
+                    onPressed: (){
+                      Navigator.push(
+                          context,
+                          new MaterialPageRoute(builder: (context){
+                            return DataTransferDemo();
+                          })
                       );
                     },
                   ),
