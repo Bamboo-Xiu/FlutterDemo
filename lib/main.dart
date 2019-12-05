@@ -29,6 +29,7 @@ import 'ScrollNotificationTestRoute.dart';
 import 'WillPopScopeTestRoute.dart';
 import 'CustomScrollViewTestRoute2.dart';
 import 'updateItem/UpdateItemMain.dart';
+import 'RouterDemo.dart';
 
 void main() {
   /// 视觉调试开关
@@ -69,6 +70,7 @@ class MyApp extends StatelessWidget {
         "image_widget":(context)=>ImageWidget(),
         "input_test_route": (context)=>InputTestRoute(),
         "row_column_route": (context)=>RowColumnTestRoute(),
+        "router_demo": (context)=> RouterDemo()
       }
     );
   }
@@ -432,6 +434,17 @@ class _MyHomePageState extends State<MyHomePage> {
                             return DataTransferDemo();
                           })
                       );
+                    },
+                  ),
+                ),
+                Container(
+                  width: double.infinity,
+                  child: RaisedButton(
+                    color: Colors.cyan,
+                    child: Text('open RouterDemo'),
+                    colorBrightness: Brightness.dark,
+                    onPressed: (){
+                      Navigator.pushNamed(context, "router_demo");
                     },
                   ),
                 )
