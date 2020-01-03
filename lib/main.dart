@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app1/AsyncDemo.dart';
 import 'package:flutter_app1/ChangeThemeDemo.dart';
 import 'package:flutter_app1/CustomPainterDemo.dart';
 import 'package:flutter/foundation.dart';
 import 'package:date_format/date_format.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_app1/GestureDemo.dart';
+import 'package:flutter_app1/NetworkDemo.dart';
 import 'package:flutter_app1/dataTransfer/DataTransferDemo.dart';
 import 'package:flutter_app1/questionList/QuestionListRoot.dart';
 
@@ -73,6 +75,8 @@ class MyApp extends StatelessWidget {
         "row_column_route": (context)=>RowColumnTestRoute(),
         "router_demo": (context)=> RouterDemo(),
         "animation_demo": (context)=> AnimationDemo(),
+        "async_demo": (context)=> AsyncDemo(),
+        "network_demo": (context)=> NetworkDemo(),
       }
     );
   }
@@ -458,6 +462,28 @@ class _MyHomePageState extends State<MyHomePage> {
                     colorBrightness: Brightness.dark,
                     onPressed: (){
                       Navigator.pushNamed(context, "animation_demo");
+                    },
+                  ),
+                ),
+                Container(
+                  width:double.infinity,
+                  child: RaisedButton(
+                    color: Colors.cyan,
+                    child: Text('open AsyncDemo'),
+                    colorBrightness: Brightness.dark,
+                    onPressed: (){
+                      Navigator.pushNamed(context, "async_demo");
+                    },
+                  ),
+                ),
+                Container(
+                  width: double.infinity,
+                  child: RaisedButton(
+                    color: Colors.cyan,
+                    child: Text('open NetworkDemo'),
+                    colorBrightness: Brightness.dark,
+                    onPressed: (){
+                      Navigator.pushNamed(context, "network_demo");
                     },
                   ),
                 )
