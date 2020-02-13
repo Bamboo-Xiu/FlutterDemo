@@ -129,7 +129,7 @@ class _DataPersistenceHomePageState extends State<DataPersistenceHomePage>{
     );
 
     // 增
-    Future<void> insertStudent(Student std) async{    // 不知道为啥总是报错
+    Future<void> insertStudent(Student std) async{
       final Database db = await database;
       await db.insert(
         'students',
@@ -158,9 +158,9 @@ class _DataPersistenceHomePageState extends State<DataPersistenceHomePage>{
     var student2 = Student(id: '${++studentID}', name: '李四', score: 80);
     var student3 = Student(id: '${++studentID}', name: '王五', score: 85);
 
-    insertStudent(student1);
-    insertStudent(student2);
-    insertStudent(student3);
+    await insertStudent(student1);
+    await insertStudent(student2);
+    await insertStudent(student3);
 
     students().then((list)=>list.forEach((stu)=>print('id = ${stu.id}, name = ${stu.name}')));
 
