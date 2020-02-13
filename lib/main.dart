@@ -33,6 +33,7 @@ import 'CustomScrollViewTestRoute2.dart';
 import 'updateItem/UpdateItemMain.dart';
 import 'RouterDemo.dart';
 import 'animationDemo/AnimationDemo.dart';
+import 'DataPersistenceDemo.dart';
 
 void main() {
   /// 视觉调试开关
@@ -77,6 +78,7 @@ class MyApp extends StatelessWidget {
         "animation_demo": (context)=> AnimationDemo(),
         "async_demo": (context)=> AsyncDemo(),
         "network_demo": (context)=> NetworkDemo(),
+        "datapersistence_demo": (context)=> DataPersistenceDemo(),
       }
     );
   }
@@ -484,6 +486,17 @@ class _MyHomePageState extends State<MyHomePage> {
                     colorBrightness: Brightness.dark,
                     onPressed: (){
                       Navigator.pushNamed(context, "network_demo");
+                    },
+                  ),
+                ),
+                Container(
+                  width: double.infinity,
+                  child: RaisedButton(
+                    color: Colors.cyan,
+                    child: Text('open DataPersistenceDemo'),
+                    colorBrightness: Brightness.dark,
+                    onPressed: (){
+                      Navigator.pushNamed(context, "datapersistence_demo");
                     },
                   ),
                 )
