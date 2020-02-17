@@ -34,6 +34,7 @@ import 'updateItem/UpdateItemMain.dart';
 import 'RouterDemo.dart';
 import 'animationDemo/AnimationDemo.dart';
 import 'DataPersistenceDemo.dart';
+import 'NativeMethodDemo.dart';
 
 void main() {
   /// 视觉调试开关
@@ -79,6 +80,8 @@ class MyApp extends StatelessWidget {
         "async_demo": (context)=> AsyncDemo(),
         "network_demo": (context)=> NetworkDemo(),
         "datapersistence_demo": (context)=> DataPersistenceDemo(),
+        "nativemethod_demo": (context)=> NativeMethodDemo(),
+
       }
     );
   }
@@ -497,6 +500,16 @@ class _MyHomePageState extends State<MyHomePage> {
                     colorBrightness: Brightness.dark,
                     onPressed: (){
                       Navigator.pushNamed(context, "datapersistence_demo");
+                    },
+                  ),
+                ),
+                Container(
+                  width: double.infinity,
+                  child: RaisedButton(
+                    color: Colors.cyan,
+                    child: Text("open NativeMethodDemo"),
+                    onPressed: (){
+                      Navigator.pushNamed(context, "nativemethod_demo");
                     },
                   ),
                 )
